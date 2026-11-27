@@ -83,6 +83,7 @@ int main(int argc, char *argv[]) {
         }
 
         if (!evaluate_expression(left, op, right, &results[i])) {
+	    printf("Ошибка: деление на ноль в выражении №%d.\n", i + 1);
             free(results);
             return 1;
         }

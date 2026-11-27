@@ -14,6 +14,9 @@ bool evaluate_expression(long left, char op, long right, long *result) {
             *result = left * right;
             return true;
         case '%':
+	    if (right == 0) {
+		    return false;
+	    }
             *result = left % right;
             return true;
         default:
