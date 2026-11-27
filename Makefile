@@ -10,7 +10,10 @@ main.o: main.c calc.h
 calc.o: calc.c calc.h
 	$(CC) $(CFLAGS) -c calc.c -o calc.o
 
+run: cmdcalc
+	./cmdcalc $(ARGS)
+
 clean:
 	rm -f main.o calc.o cmdcalc
 
-.PHONY: clean
+.PHONY: run clean
